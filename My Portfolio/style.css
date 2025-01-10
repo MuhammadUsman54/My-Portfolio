@@ -209,7 +209,6 @@ span {
   background: var(--main-color);
   color: black;
 }
-
 .text-animation {
   font-size: 34px;
   font-weight: 600;
@@ -218,27 +217,63 @@ span {
 
 .text-animation span {
   position: relative;
-  font-size: 20px;
-  color: var(--main-color);
-  animation-name: myanimation;
-  animation-duration: 2s infinite;
 }
 
-@keyframes  [myanimation] {
-  10%,
-  15%,
-  30%,
-  35%,
-  50%,
-  55%,
-  70%,
-  75%,
-  90%,
-  95% ( width: 0;)
-     
- 
-  
+.text-animation span::before {
+  content: "Web Developer";
+  color: var(--main-color);
+  animation: words 20s infinite;
 }
+
+.text-animation span::after {
+  content: "";
+  background-color: var(--bg-color);
+  position: absolute;
+  width: calc(100% + 8px);
+  height: 100%;
+  border-left: 3px solid var(--bg-color);
+  right: -8px;
+  animation: cursor 0.6s infinite, typing 20s steps(14) infinite;
+}
+
+@keyframes cursor {
+  to {
+    border-left: 2px solid var(--main-color);
+  }
+}
+
+@keyframes words {
+  0%, 20% {
+    content: "Frontend Designer";
+  }
+  21%, 40% {
+    content: "Web Designer";
+  }
+  41%, 60% {
+    content: "UI / UX Designer";
+  }
+  61%, 80% {
+    content: "Web Developer";
+  }
+  81%, 100% {
+    content: "Software Tester";
+  }
+}
+
+@keyframes typing {
+  10%, 15%, 30%, 35%, 50%, 55%, 70%, 75%, 90%, 95% {
+    width: 0;
+  }
+  5%, 20%, 25%, 40%, 45%, 60%, 65%, 80%, 85% {
+    width: calc(100% + 8px);
+  }
+}
+
+
+
+
+
+
 .heading {
   font-size: 8rem;
   text-align: center;
@@ -623,8 +658,7 @@ span {
     grid-template-columns: repeat(2.1fr);
   }
 }
-
-@media screen and (max-width:991px) {
+@media screen and (max-width: 991px) {
   .header {
     padding: 2rem 3%;
   }
@@ -637,14 +671,11 @@ span {
     left: 7px;
   }
 
-  .timeline-item:nth-child(add) {
-    padding-right: 0;
-    text-align: left;
-  }
-
   .timeline-item:nth-child(odd),
   .timeline-item:nth-child(even) {
     padding-left: 37px;
+    padding-right: 0;
+    text-align: left;
   }
 
   .timeline-dot {
@@ -655,158 +686,23 @@ span {
     padding-bottom: 7rem;
   }
 
-  .testimoinals .wrapper {
+  .testimonials .wrapper {
     flex-direction: column;
     flex-wrap: wrap;
+    width: 100vw;
+  }
+
+  .testimonials .testimoinals-item{
+    width: 40vw;
+  }
+
+  .input-box{
+    width: 150px;
   }
 
   .footer {
     padding: 2rem 3%;
     margin: 20px;
-  }
-}
-
-@media (max-width:895px) {
-  #menu-icon {
-    display: block;
-    color: var(--main-color);
-  }
-
-  .navbar {
-    display: none;
-  }
-
-  .navbar.active {
-    display: block;
-  }
-
-  .navbar a {
-    display: block;
-    font-size: 2rem;
-    margin: 3rem 0;
-    color: white;
-  }
-
-  .home {
-    flex-direction: column-reverse;
-    margin: 5rem 4rem;
-  }
-
-  .home-content h3 {
-    font-size: 2.6rem;
-  }
-
-  .home-content h1 {
-    font-size: 8rem;
-    margin-top: 3rem;
-  }
-
-  .home-content p {
-    max-width: 600px;
-    margin: 0 auto;
-  }
-
-  .home-img img {
-    width: 56vw;
-  }
-
-  .services h2 {
-    margin-bottom: 3rem;
-  }
-
-  .services-container {
-    grid-template-columns: repeat(1.2fr);
-  }
-
-  .contact form .btn1 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 1rem 2.8rem;
-    background: var(--main-color);
-    box-shadow: 0 0 25px var(--main-color);
-    border-radius: 4rem;
-    font-size: 1.6rem;
-    color: black;
-    border: 2px solid transparent;
-    letter-spacing: 0.1rem;
-    font-weight: 600;
-    transition: 0.3s ease-in-out;
-    cursor: pointer;
-    margin-top: 2rem;
-    margin-left: 17.5rem;
-    margin-right: 17.7rem;
-
-  }
-
-  .contact form .btn1:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 50px var(--main-color);
-  }
-
-  .services-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    align-items: center;
-    gap: 2.5rem;
-  }
-
-  .services-box {
-    background-color: var(--main-color);
-    height: 300px;
-    border-radius: 3rem;
-    border: 5px solid transparent;
-    cursor: pointer;
-    transition: 0.4s ease-in-out;
-  }
-
-  .services-box:hover {
-    background: white;
-    color: black;
-    border: 5px solid var(--main-color);
-    transform: scale(1.03);
-  }
-
-  .services-box .services-info {
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-    max-height: 200px;
-    justify-content: left;
-    align-items: baseline;
-    padding: 5rem 5rem;
-  }
-
-  .services-info h4 {
-    font-size: 3rem;
-    font-weight: 800;
-    line-height: 2;
-  }
-
-  .services-info p {
-    font-size: 1.6rem;
-    font-weight: 600;
-    max-height: 100px;
-    line-height: 1.7;
-    margin: auto;
-  }
-
-  .home-img img {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
-    border-radius: 50%;
-    left: 40px;
-   
-  }
- .education{
-    /* display: flex;
-    justify-content: center;
-    align-items: center; */
-    margin: 20px;
-    left: 30px;
-    width: 100% ;;
   }
 }
 
