@@ -393,7 +393,10 @@
     #projects h2 {
       font-size: 32px;
       margin-bottom: 40px;
-      font-family: "Dancing Script", cursive;
+      font-family: "Playwrite CA", cursive;
+      font-optical-sizing: auto;
+      font-weight: weight;
+      font-style: normal;
     }
 
     .projects-container {
@@ -739,4 +742,5 @@
       .footer-icon a:hover {
         color: #0dcaf0;
       }
+
     }
