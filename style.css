@@ -402,22 +402,21 @@
     .projects-container {
       display: flex;
       flex-direction: row;
-      /* row me laane ke liye */
-      justify-content: center;
-      align-items: flex-start;
+      justify-content: space-between;
+      align-items: center;
       gap: 20px;
       width: 90%;
-      max-width: 1000px;
-      margin: auto;
       flex-wrap: wrap;
     }
 
     .project-card {
-      flex: 0 0 300px;
       background: rgba(255, 255, 255, 0.1);
       border-radius: 15px;
       padding: 20px;
       transition: transform 0.3s ease, background 0.3s ease;
+      flex: 1 1 calc(50% - 20px);
+      /* har line mein do card */
+      max-width: calc(50% - 20px);
     }
 
     .project-card:hover {
@@ -643,7 +642,7 @@
         transition: right 0.3s ease-in-out;
         z-index: 9999;
         padding: 50px;
-       border-bottom:  2px solid #0dcaf0;
+        border-bottom: 2px solid #0dcaf0;
       }
 
       .nav-links.show {
@@ -742,5 +741,4 @@
       .footer-icon a:hover {
         color: #0dcaf0;
       }
-
     }
