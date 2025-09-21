@@ -417,6 +417,8 @@
       flex: 1 1 calc(50% - 20px);
       /* har line mein do card */
       max-width: calc(50% - 20px);
+      width: 400px;
+      height: 400px;
     }
 
     .project-card:hover {
@@ -425,7 +427,8 @@
     }
 
     .project-card img {
-      width: 100%;
+      width: 180px;
+      height: 180px;
       border-radius: 12px;
       margin-bottom: 15px;
     }
